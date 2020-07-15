@@ -16,6 +16,151 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.wepay.com/wepay.min.js"></script>
+	<script src="https://cdn.wepay.com/wepay.min.js"></script>
+	<script>
+	  var myAppId = "564397";
+	  var apiVersion = "3.0";
+	  var error = WePay.configure("stage", myAppId, apiVersion);
+	  if (error) {
+	    // An error is returned if any fields are missing or invalid.
+	  console.log(error);
+	  }
+	</script> 
+	<script>
+  document.getElementByClassName("nav-link").addEventListener('click', function() {
+    WePay.tokens.create({
+   "results": [
+      {
+         "terms_of_service": {
+            "acceptance_time": 1594787274,
+            "original_ip": "** REDACTED **",
+            "terms_of_service_version": "platform"
+         },
+         "controller": {
+            "is_beneficial_owner": null,
+            "name": null,
+            "phone": null,
+            "address": null,
+            "email": "** REDACTED **",
+            "email_is_verified": false,
+            "personal_country_info": {
+               "US": {
+                  "social_security_number_last_four_is_present": false,
+                  "social_security_number_is_present": false
+               }
+            },
+            "job_title": null,
+            "date_of_birth_is_present": false
+         },
+         "entity_name": "[Add App Name Here]",
+         "phone": null,
+         "primary_url": null,
+         "description": null,
+         "address": null,
+         "entity_country_info": {
+            "US": {
+               "legal_form": "corporation",
+               "employer_identification_number": null
+            }
+         },
+         "additional_representatives": null,
+         "custom_data": null,
+         "country": "US",
+         "create_time": 1594787274,
+         "id": "20053028-f505-4923-a3c1-90e0d8847be8",
+         "resource": "legal_entities",
+         "path": "/legal_entities/20053028-f505-4923-a3c1-90e0d8847be8",
+         "owner": {
+            "id": "564397",
+            "resource": "applications",
+            "path": null
+         },
+         "api_version": "3.0"
+      },
+      {
+         "terms_of_service": {
+            "acceptance_time": 1490656130,
+            "original_ip": "** REDACTED **",
+            "terms_of_service_version": "platform"
+         },
+         "controller": {
+            "is_beneficial_owner": null,
+            "name": {
+               "first": "** REDACTED **",
+               "last": "** REDACTED **"
+            },
+            "phone": {
+               "country_code": "+1",
+               "phone_number": "** REDACTED **"
+            },
+            "address": {
+               "city": "** REDACTED **",
+               "country": "US",
+               "line1": "** REDACTED **",
+               "postal_code": "** REDACTED **",
+               "region": "CA"
+            },
+            "email": "** REDACTED **",
+            "email_is_verified": false,
+            "personal_country_info": {
+               "US": {
+                  "social_security_number_last_four_is_present": true,
+                  "social_security_number_is_present": true
+               }
+            },
+            "job_title": "CFO",
+            "reference_id": "reference_id_0",
+            "date_of_birth_is_present": true
+         },
+         "entity_name": "Foo Bar Charity",
+         "phone": null,
+         "primary_url": "http://www.example.com",
+         "description": "The Foo Bar Charity is very important.",
+         "address": {
+            "city": "** REDACTED **",
+            "country": "US",
+            "line1": "** REDACTED **",
+            "postal_code": "** REDACTED **",
+            "region": "CA"
+         },
+         "entity_country_info": {
+            "US": {
+               "legal_form": null,
+               "employer_identification_number": "123211230"
+            },
+            "country_of_formation": "CA",
+            "operates_in_sanctioned_countries": [
+               "CU",
+               "SY"
+            ],
+            "year_of_formation": 1991
+         },
+         "additional_representatives": null,
+         "custom_data": null,
+         "country": "US",
+         "create_time": 1594789729,
+         "id": "7398d04e-1ddf-4a14-84bc-606ac9054470",
+         "resource": "legal_entities",
+         "path": "/legal_entities/7398d04e-1ddf-4a14-84bc-606ac9054470",
+         "owner": {
+            "id": "564397",
+            "resource": "applications",
+            "path": null
+         },
+         "api_version": "3.0"
+      }
+   ],
+   "next": null,
+   "previous": null,
+   "api_version": "3.0"
+}, {}, function(response) {
+      // Handle the response by passing the token to your webserver
+      // and using it in a POST /legal_entities request.
+      console.log(response);
+    });
+  });
+</script>
 
 </head>
 <body>
